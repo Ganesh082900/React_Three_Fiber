@@ -1,0 +1,19 @@
+{
+    "name": "portfolio-contact-server",
+    "version": "1.0.0",
+    "description": "Sends contact form submissions from the portfolio by email.",
+    "private": true,
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node --env-file=.env index.js"
+    },
+    "engines": {
+        "node": ">=20.6"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "nodemailer": "^6.9.14"
+    }
+}

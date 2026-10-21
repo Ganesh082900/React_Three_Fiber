@@ -1,38 +1,24 @@
 {
-    "name": "react-three-fiber-boilerplate",
+    "name": "react-three-fiber-portfolio",
     "version": "1.0.0",
-    "description": "",
-    "keywords": [],
-    "main": "src/index.jsx",
-    "devDependencies": {
-        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-        "@react-three/fiber": "8.14.3",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-scripts": "5.0.1",
-        "three": "0.157.0"
-    },
+    "description": "Interactive 3D portfolio built with React, Three.js and React Three Fiber.",
+    "private": true,
+    "type": "module",
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+        "dev": "vite",
+        "start": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "dependencies": {
         "@react-three/drei": "^9.88.11",
-        "@react-three/postprocessing": "^2.15.10",
-        "leva": "^0.9.35"
+        "@react-three/fiber": "8.14.3",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "three": "0.157.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.2.0",
+        "vite": "^5.0.0"
     }
 }
