@@ -1,0 +1,62 @@
+:root {
+  --color-bg: #14100D;
+  --color-text: #F3EDE6;
+  --color-accent: #F2A65A;
+  --color-muted: #B3A89C;
+  --color-subtle: #968B80;
+  --color-body: #C4BAAE;
+  --color-nav: #D2C9BE;
+  --color-border: #5a3d28;
+  --color-divider: #3a2a1e;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--color-bg);
+}
+
+body {
+  font-family: Sora, sans-serif;
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+input,
+textarea {
+  background: rgba(20, 16, 13, 0.7);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  padding: 14px;
+  font: inherit;
+  font-size: 15px;
+}
+
+.canvas-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.scroll-space {
+  height: 600vh;
+}
+
+.planet-label {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  font-family: Sora, sans-serif;
+}

@@ -1,0 +1,582 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.overlay a,
+.overlay button,
+.overlay input,
+.overlay textarea,
+.overlay .panel.active {
+  pointer-events: auto;
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 28px;
+  left: 48px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav nav {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.nav nav a {
+  min-height: 44px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  color: var(--color-nav);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav nav a:hover {
+  color: var(--color-accent);
+}
+
+.nav nav a.on {
+  border-bottom: 1px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+/* Panels */
+.panel {
+  position: absolute;
+  left: 96px;
+  top: 50%;
+  width: min(560px, 80vw);
+  transform: translateY(-50%);
+  transition: opacity 0.3s linear;
+}
+
+.panel.wide {
+  width: min(760px, 85vw);
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.panel h1 {
+  margin: 16px 0 20px;
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.panel h2 {
+  margin: 8px 0 12px;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.panel p {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-body);
+  font-weight: 300;
+}
+
+.hint {
+  position: absolute;
+  left: 96px;
+  bottom: 32px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--color-subtle);
+}
+
+/* Buttons */
+.btns {
+  display: flex;
+  gap: 16px;
+}
+
+.btns--spaced {
+  margin-top: 20px;
+}
+
+.btn {
+  min-height: 52px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  border-radius: 26px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn.fill {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: 1px solid var(--color-accent);
+}
+
+.btn.line {
+  border: 1px solid #8A5A34;
+  color: var(--color-text);
+  background: transparent;
+}
+
+/* Progress meter */
+.meter {
+  position: absolute;
+  right: 32px;
+  top: 250px;
+  width: 2px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.meter > div {
+  width: 2px;
+  background: var(--color-accent);
+}
+
+.pct {
+  position: absolute;
+  right: 20px;
+  top: 484px;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+/* About / Skills / Projects */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  font-size: 14px;
+  color: var(--color-nav);
+}
+
+.chip img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.panel.wide .chip {
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+.panel.wide .chip img {
+  width: 18px;
+  height: 18px;
+}
+
+.skill-group {
+  margin-bottom: 14px;
+}
+
+.skill-group .eyebrow {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.proj {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-divider);
+  color: inherit;
+}
+
+.proj b {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.proj span {
+  display: block;
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+/* Contact */
+.panel.contact-page {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: auto;
+  transform: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  padding: 100px 96px 60px 96px;
+}
+
+.contact-left {
+  max-width: 460px;
+}
+
+.contact-left p {
+  color: #E3D5C3;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.link-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: 14px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.link-row em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+.link-row:hover em {
+  text-decoration: underline;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #2c2119;
+  border-radius: 20px;
+  padding: 28px;
+  gap: 18px;
+}
+
+.card label {
+  display: grid;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--color-muted);
+}
+
+.card input,
+.card textarea {
+  background: #1d1611;
+  border-color: #2c2119;
+}
+
+.status {
+  font-size: 13px;
+  color: var(--color-muted);
+  align-self: center;
+}
+
+.copy {
+  position: absolute;
+  left: 96px;
+  bottom: 18px;
+  font-size: 11px;
+  color: var(--color-subtle);
+}
+
+/* Tablet / small laptop (landscape) */
+@media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
+  .nav {
+    left: 32px;
+    right: 32px;
+  }
+
+  .panel {
+    left: 56px;
+  }
+
+  .hint,
+  .copy {
+    left: 56px;
+  }
+
+  .panel.contact-page {
+    padding: 100px 56px 60px;
+    gap: 40px;
+  }
+
+  .meter {
+    right: 20px;
+  }
+
+  .pct {
+    right: 8px;
+  }
+}
+
+/* Short landscape screens (phones turned sideways) */
+@media (max-height: 520px) and (min-aspect-ratio: 1/1) {
+  .nav {
+    top: 12px;
+  }
+
+  .panel {
+    left: 40px;
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+  }
+
+  .panel h1 {
+    font-size: 40px;
+    margin: 8px 0 10px;
+  }
+
+  .panel h2 {
+    font-size: 28px;
+    margin: 4px 0 8px;
+  }
+
+  .panel p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .btn {
+    min-height: 40px;
+    padding: 0 20px;
+  }
+
+  .chip,
+  .panel.wide .chip {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .skill-group {
+    margin-bottom: 8px;
+  }
+
+  .proj {
+    padding: 8px 0;
+  }
+
+  .hint,
+  .pct,
+  .meter {
+    display: none;
+  }
+
+  .panel.contact-page {
+    padding: 64px 40px 24px;
+    gap: 32px;
+    overflow-y: auto;
+  }
+
+  .contact-left p {
+    margin-bottom: 16px;
+  }
+
+  .card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .copy {
+    display: none;
+  }
+}
+
+/* Stacked layout (phones and portrait tablets): keep in sync with config/responsive.js */
+@media (max-aspect-ratio: 1/1), (max-width: 600px) {
+  .nav {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .nav nav {
+    gap: 0;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+
+  .nav nav a {
+    min-height: 40px;
+    padding: 0 7px;
+  }
+
+  .panel,
+  .panel.wide {
+    left: 24px;
+    right: 24px;
+    top: auto;
+    bottom: 64px;
+    width: auto;
+    transform: none;
+    max-height: calc(100dvh - 150px);
+    overflow-y: auto;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+
+  .panel h1 {
+    font-size: clamp(40px, 12vw, 64px);
+    margin: 10px 0 14px;
+  }
+
+  .panel h2 {
+    font-size: clamp(26px, 7vw, 40px);
+    margin: 6px 0 10px;
+  }
+
+  .panel p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .btns {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn {
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 14px;
+  }
+
+  .chips {
+    gap: 8px;
+  }
+
+  .chip,
+  .panel.wide .chip {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .chip img,
+  .panel.wide .chip img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .skill-group {
+    margin-bottom: 10px;
+  }
+
+  .skill-group .eyebrow {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .proj {
+    padding: 10px 0;
+  }
+
+  .proj span {
+    font-size: 12px;
+  }
+
+  .hint {
+    left: 24px;
+    bottom: 24px;
+    font-size: 11px;
+  }
+
+  .meter {
+    right: 8px;
+    top: 120px;
+    height: 120px;
+  }
+
+  .pct {
+    display: none;
+  }
+
+  .panel.contact-page {
+    left: 0;
+    right: 0;
+    top: 72px;
+    bottom: 0;
+    max-height: none;
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 20px;
+    padding: 16px 24px 32px;
+    overflow-y: auto;
+  }
+
+  .contact-left {
+    max-width: none;
+  }
+
+  .contact-left p {
+    margin-bottom: 16px;
+  }
+
+  .link-row {
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .card input,
+  .card textarea {
+    padding: 11px 12px;
+  }
+
+  .copy {
+    position: static;
+    padding-top: 4px;
+  }
+}
